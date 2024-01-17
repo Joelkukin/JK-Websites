@@ -1,0 +1,7 @@
+node_modules
+*.url
+*.mp4
+
+assets/humo-360p.mp4
+assets/humo-720p.mp4
+assets/humo-1080p.mp4

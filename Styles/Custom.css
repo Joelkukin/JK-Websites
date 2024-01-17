@@ -1,0 +1,313 @@
+@import url("https://fonts.cdnfonts.com/css/aldrich");
+
+* {
+  font-family: "Aldrich";
+}
+
+/* Global */
+
+:root {
+  --color-primario: #54ffff;
+  --color-secundario: #0084ff;
+  --color-terciario: #8900a5;
+}
+.borde-gradient {
+  border-width: 20px;
+  border-image: linear-gradient(to right, #000080, #00FFFF) 30 30 round;
+}
+.marco{
+  --border-color: linear-gradient(-45deg, var(--color-primario), var(--color-secundario), var(--color-terciario));
+  --curve-size: .5em;
+  --bg: #080312;
+  clip-path: polygon(
+            /* Top-left */
+            0% var(--curve-size),
+
+            var(--curve-size) 0,
+            /* top-right */
+            100% 0,
+            100% calc(100% - var(--curve-size)),
+
+            /* bottom-right 1 */
+            calc(100% - var(--curve-size)) 100%,
+            /* bottom-right 2 */
+            0 100%);
+            
+  background: var(--bg);
+  /* background-size: 300% 300%; */
+  padding: .5em 1.5em;
+  
+}
+
+
+
+.marco {
+  --border-color: linear-gradient(-45deg, var(--color-primario), var(--color-secundario), var(--color-terciario));
+  --border-width: .125em;
+  --curve-size: .5em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+    /* use position: relative; so that BG is only for .btn */
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: .5em 1.5em;
+  font-size: 17px;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
+  clip-path: polygon(
+            /* Top-left */
+            0% var(--curve-size),
+
+            var(--curve-size) 0,
+            /* top-right */
+            100% 0,
+            100% calc(100% - var(--curve-size)),
+
+            /* bottom-right 1 */
+            calc(100% - var(--curve-size)) 100%,
+            /* bottom-right 2 */
+            0 100%);
+  transition: color 250ms;
+}
+
+.marco::after,
+.marco::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.marco::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%
+  }
+
+  50% {
+    background-position: 70% 100%
+  }
+
+  100% {
+    background-position: 31% 0%
+  }
+}
+
+.marco::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+            /* Top-left */
+            var(--border-width) 
+            calc(var(--curve-size) + var(--border-width) * .5),
+
+            calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+
+            /* top-right */
+            calc(100% - var(--border-width)) 
+            var(--border-width),
+
+            calc(100% - var(--border-width)) 
+            calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+            /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+            /* bottom-right 2 */
+            var(--border-width) calc(100% - var(--border-width)));
+  transition: clip-path 500ms;
+}
+
+.btn:where(:hover, :focus)::after {
+  clip-path: polygon(
+                /* Top-left */
+                calc(100% - var(--border-width)) 
+
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    
+                calc(100% - var(--border-width))
+
+                var(--border-width),
+    
+                /* top-right */
+                calc(100% - var(--border-width))
+
+                 var(--border-width),
+    
+                calc(100% - var(--border-width)) 
+
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+    
+                /* bottom-right 1 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) 
+                calc(100% - var(--border-width)),
+
+                /* bottom-right 2 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+                calc(100% - var(--border-width)));
+  transition: 200ms;
+}
+ 
+.btn:where(:hover, :focus) {
+  color: #fff;
+}
+
+
+/* ------------------------------------------------- */
+/* Specific */
+
+
+/* fondo background */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 0;
+  /* filtro azul */ filter: contrast(160%) brightness(85%) hue-rotate(30deg);
+}
+
+#content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  /* Estilos adicionales para el contenido */
+}
+
+.container-fluid{
+  margin: 0;
+}
+
+
+
+
+
+/* Navbar-home */
+#navbar-home {
+  /* fondo */
+  background-color: black;
+}
+
+/* Banner */
+
+#banner {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Banner */
+/* banner - titulo */
+
+  /* titulo - dimensiones */
+
+.h-title{
+  /* color de texto */
+  color: white;
+  /* centrar */
+  text-align: center;
+}
+
+
+/* Cards */
+
+
+.mycard {
+  width: 30rem;
+  height: 36rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: #f0f0f0;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+}
+.mycard img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  transition: opacity 0.2s ease-out;
+}
+.mycard h2 {
+  position: absolute;
+  inset: auto auto 30px 30px;
+  margin: 0;
+  transition: inset 0.3s 0.3s ease-out;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.mycard p,
+.mycard a {
+  position: absolute;
+  opacity: 0;
+  max-width: 80%;
+  transition: opacity 0.3s ease-out;
+}
+.mycard p {
+  inset: auto auto 80px 30px;
+}
+.mycard a {
+  inset: auto auto 40px 30px;
+  color: inherit;
+  text-decoration: none;
+}
+.mycard:hover h2 {
+  inset: auto auto 290px 30px;
+  transition: inset 0.3s ease-out;
+}
+.mycard:hover p, .mycard:hover a {
+  opacity: 1;
+  transition: opacity 0.5s 0.1s ease-in;
+}
+.mycard:hover img {
+  transition: opacity 0.3s ease-in;
+  opacity: 1;
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { 
+  
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+
+
+
+  #banner .h-title h1 {
+  /* Tamaño de letra */
+  font-size: 6rem;
+  }
+}
+ 
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+  
+}
